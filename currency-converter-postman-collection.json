@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "b9b9b9b9-b9b9-b9b9-b9b9-b9b9b9b9b9b9",
+		"name": "Currency Converter API",
+		"description": "Collection for testing the Currency Converter Spring Boot application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Convert Single Currency",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fromCurrency\": \"USD\",\n    \"amount\": 100,\n    \"toCurrency\": \"EUR\"\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/convert",
+					"host": ["{{baseUrl}}"],
+					"path": ["convert"]
+				},
+				"description": "Convert from one currency to another specific currency"
+			},
+			"response": [
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fromCurrency\": \"USD\",\n    \"amount\": 100,\n    \"toCurrency\": \"EUR\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/convert"
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"body": "{\n    \"fromCurrency\": \"USD\",\n    \"amount\": 100,\n    \"currencyValues\": {\n        \"EUR\": 85.0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Convert to All Currencies",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fromCurrency\": \"USD\",\n    \"amount\": 100\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/convert/all",
+					"host": ["{{baseUrl}}"],
+					"path": ["convert", "all"]
+				},
+				"description": "Convert from one currency to all available currencies"
+			},
+			"response": [
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fromCurrency\": \"USD\",\n    \"amount\": 100\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/convert/all"
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"body": "{\n    \"fromCurrency\": \"USD\",\n    \"amount\": 100,\n    \"currencyValues\": {\n        \"EUR\": 85.0,\n        \"JPY\": 11000.0,\n        \"GBP\": 73.0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Convert EUR to All",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fromCurrency\": \"EUR\",\n    \"amount\": 100\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/convert/all",
+					"host": ["{{baseUrl}}"],
+					"path": ["convert", "all"]
+				},
+				"description": "Convert from EUR to all available currencies"
+			}
+		},
+		{
+			"name": "Convert JPY to USD",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fromCurrency\": \"JPY\",\n    \"amount\": 10000,\n    \"toCurrency\": \"USD\"\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/convert",
+					"host": ["{{baseUrl}}"],
+					"path": ["convert"]
+				},
+				"description": "Convert from JPY to USD"
+			}
+		},
+		{
+			"name": "List All Currencies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/currencies",
+					"host": ["{{baseUrl}}"],
+					"path": ["currencies"]
+				},
+				"description": "Get list of all supported currencies"
+			},
+			"response": [
+				{
+					"name": "Sample Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/currencies"
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"body": "[\n    {\n        \"code\": \"USD\",\n        \"name\": \"US Dollar\",\n        \"description\": \"United States Dollar\"\n    },\n    {\n        \"code\": \"EUR\",\n        \"name\": \"Euro\",\n        \"description\": \"European Union Euro\"\n    },\n    {\n        \"code\": \"GBP\",\n        \"name\": \"British Pound\",\n        \"description\": \"Great Britain Pound Sterling\"\n    }\n]"
+				}
+			]
+		}
+	]
+}

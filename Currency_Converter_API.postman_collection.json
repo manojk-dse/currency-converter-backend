@@ -1,0 +1,95 @@
+{
+    "info": {
+        "name": "Currency Converter API",
+        "description": "Collection for testing Currency Converter REST APIs",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Currency Operations",
+            "item": [
+                {
+                    "name": "Convert Currency",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/convert",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "8080",
+                            "path": ["api", "v1", "convert"]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"amount\": 100,\n    \"fromCurrency\": \"USD\",\n    \"toCurrency\": \"EUR\"\n}"
+                        },
+                        "description": "Convert amount from one currency to another"
+                    }
+                },
+                {
+                    "name": "Convert to All Currencies",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/convert/all",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "8080",
+                            "path": ["api", "v1", "convert", "all"]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"amount\": 100,\n    \"fromCurrency\": \"USD\"\n}"
+                        },
+                        "description": "Convert amount from one currency to all supported currencies"
+                    }
+                },
+                {
+                    "name": "Get Supported Currencies",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/currencies",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "8080",
+                            "path": ["api", "v1", "currencies"]
+                        },
+                        "description": "Get list of all supported currencies"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Job Operations",
+            "item": [
+                {
+                    "name": "Update Currency Rates",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:8080/api/jobs/currency-rates/update",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "8080",
+                            "path": ["api", "jobs", "currency-rates", "update"]
+                        },
+                        "description": "Manually trigger currency rate update"
+                    }
+                }
+            ]
+        }
+    ]
+}
