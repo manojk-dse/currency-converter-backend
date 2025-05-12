@@ -11,6 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -24,6 +25,7 @@ public class CurrencyConversionMap {
     private final CurrencyExchangeRateRepository rateRepository;
     private final CurrencyRepository currencyRepository;
     private final Map<String, Map<String, BigDecimal>> conversionRates = new ConcurrentHashMap<>();
+    private final Map<String, Map<String, LocalDateTime>> rateTimestamps = new ConcurrentHashMap<>();
     private final Map<String, Currency> currencies = new ConcurrentHashMap<>();
     
     /**
@@ -49,18 +51,34 @@ public class CurrencyConversionMap {
         
         // Process all rates
         for (CurrencyExchangeRate rate : latestRates) {
-            newRates.computeIfAbsent(rate.getBaseCurrency(), k -> new ConcurrentHashMap<>())
-                    .put(rate.getTargetCurrency(), rate.getExchangeRate());
+            String baseCurrency = rate.getBaseCurrency();
+            String targetCurrency = rate.getTargetCurrency();
+            
+            // Store conversion rate
+            newRates.computeIfAbsent(baseCurrency, k -> new ConcurrentHashMap<>())
+                    .put(targetCurrency, rate.getExchangeRate());
+            
+            // Store timestamp
+            rateTimestamps.computeIfAbsent(baseCurrency, k -> new ConcurrentHashMap<>())
+                    .put(targetCurrency, rate.getRateTimestamp());
         }
         
         // Add direct conversion rates (1.0) for same currency
         for (String currency : newRates.keySet()) {
             newRates.get(currency).put(currency, BigDecimal.ONE);
+            rateTimestamps.computeIfAbsent(currency, k -> new ConcurrentHashMap<>())
+                    .put(currency, LocalDateTime.now()); // Self-conversion is always current
         }
         
         // Replace the old rates with new ones
         conversionRates.clear();
         conversionRates.putAll(newRates);
+        
+        // Create a new map for timestamps and update it
+        Map<String, Map<String, LocalDateTime>> newTimestamps = new ConcurrentHashMap<>();
+        newTimestamps.putAll(rateTimestamps);
+        rateTimestamps.clear();
+        rateTimestamps.putAll(newTimestamps);
         
         log.info("Successfully reloaded {} base currencies with their conversion rates", newRates.size());
     }
@@ -74,6 +92,17 @@ public class CurrencyConversionMap {
     public BigDecimal getRate(String from, String to) {
         Map<String, BigDecimal> rates = conversionRates.get(from);
         return rates != null ? rates.get(to) : null;
+    }
+
+    /**
+     * Gets the timestamp when the conversion rate was last updated.
+     * @param from source currency code
+     * @param to target currency code
+     * @return the timestamp when the rate was last updated, or null if not found
+     */
+    public LocalDateTime getRateTimestamp(String from, String to) {
+        Map<String, LocalDateTime> timestamps = rateTimestamps.get(from);
+        return timestamps != null ? timestamps.get(to) : null;
     }
     
     /**

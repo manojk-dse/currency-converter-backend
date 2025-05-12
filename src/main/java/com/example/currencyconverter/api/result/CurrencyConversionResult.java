@@ -2,6 +2,7 @@ package com.example.currencyconverter.api.result;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.time.LocalDateTime;
 
 import com.example.currencyconverter.data.model.Currency;
 
@@ -19,21 +20,23 @@ public class CurrencyConversionResult {
     }
 
     // Constructor with all fields
-    public CurrencyConversionResult(Currency fromCurrency, Float amount) {
+    public CurrencyConversionResult(Currency fromCurrency, Float amount, LocalDateTime timestamp) {
         this.fromCurrency = new CurrencyValue(fromCurrency.getCode(), 
                                             fromCurrency.getName(), 
                                             fromCurrency.getDescription(), 
-                                            amount);
+                                            amount,
+                                            timestamp);
         this.amount = amount;
         this.currencyValues = new HashMap<>();
     }
 
     // Utility method to add a single currency conversion
-    public void addCurrencyValue(Currency currency, Float value) {
+    public void addCurrencyValue(Currency currency, Float value, LocalDateTime timestamp) {
         this.currencyValues.put(currency.getCode(), 
             new CurrencyValue(currency.getCode(), 
                             currency.getName(), 
                             currency.getDescription(), 
-                            value));
+                            value,
+                            timestamp));
     }
 }

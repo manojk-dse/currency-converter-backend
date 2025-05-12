@@ -11,6 +11,7 @@ import com.example.currencyconverter.data.model.Currency;
 import lombok.extern.slf4j.Slf4j;
 import java.util.Map;
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 @Slf4j
 @Service
@@ -42,11 +43,13 @@ public class CurrencyConverterSvc implements CurrencyConverterifc {
             return null;
         }
         
-        CurrencyConversionResult result = new CurrencyConversionResult(fromCurrency, amount);
+        LocalDateTime timestamp = conversionMap.getRateTimestamp(fromCurrencyCode, toCurrencyCode);
+        CurrencyConversionResult result = new CurrencyConversionResult(fromCurrency, amount, timestamp);
         BigDecimal rate = conversionMap.getRate(fromCurrencyCode, toCurrencyCode);
         
         if (rate != null) {
-            result.addCurrencyValue(toCurrency, rate.floatValue() * amount);
+            LocalDateTime targetTimestamp = conversionMap.getRateTimestamp(fromCurrencyCode, toCurrencyCode);
+            result.addCurrencyValue(toCurrency, rate.floatValue() * amount, targetTimestamp);
         }
         
         return result;
@@ -76,7 +79,8 @@ public class CurrencyConverterSvc implements CurrencyConverterifc {
             return null;
         }
         
-        CurrencyConversionResult result = new CurrencyConversionResult(fromCurrency, amount);
+        LocalDateTime timestamp = conversionMap.getRateTimestamp(fromCurrencyCode, fromCurrencyCode);
+        CurrencyConversionResult result = new CurrencyConversionResult(fromCurrency, amount, timestamp);
         Map<String, BigDecimal> rates = conversionMap.getRatesForCurrency(fromCurrencyCode);
         log.debug("Found {} conversion rates for {}", rates.size(), fromCurrencyCode);
         
@@ -86,7 +90,8 @@ public class CurrencyConverterSvc implements CurrencyConverterifc {
             Currency targetCurrency = conversionMap.getCurrency(entry.getKey());
             if (targetCurrency != null) {
                 float convertedAmount = entry.getValue().floatValue() * amount;
-                result.addCurrencyValue(targetCurrency, convertedAmount);
+                LocalDateTime targetTimestamp = conversionMap.getRateTimestamp(fromCurrencyCode, targetCurrency.getCode());
+                result.addCurrencyValue(targetCurrency, convertedAmount, targetTimestamp);
                 log.trace("Converted {} {} to {} {}", amount, fromCurrencyCode, convertedAmount, targetCurrency.getCode());
                 successfulConversions++;
             } else {

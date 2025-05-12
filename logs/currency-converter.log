@@ -1,0 +1,1411 @@
+2025-05-12 17:57:53.148 INFO  [] [main] c.e.c.CurrencyConverterApplication : Starting CurrencyConverterApplication using Java 21.0.7 with PID 28540 (C:\Work\GenAI-Projects\currency-converter\backend\currency-converter-backend\target\classes started by ManojKalyanaraman in C:\Work\GenAI-Projects\currency-converter\backend\currency-converter-backend)
+2025-05-12 17:57:53.152 INFO  [] [main] c.e.c.CurrencyConverterApplication : No active profile set, falling back to 1 default profile: "default"
+2025-05-12 17:57:55.032 INFO  [] [main] o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-12 17:57:55.169 INFO  [] [main] o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 110 ms. Found 3 JPA repository interfaces.
+2025-05-12 17:57:57.058 INFO  [] [main] o.s.b.w.embedded.tomcat.TomcatWebServer : Tomcat initialized with port 8080 (http)
+2025-05-12 17:57:57.078 INFO  [] [main] o.apache.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-8080"]
+2025-05-12 17:57:57.090 INFO  [] [main] o.apache.catalina.core.StandardService : Starting service [Tomcat]
+2025-05-12 17:57:57.092 INFO  [] [main] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-05-12 17:57:57.303 INFO  [] [main] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+2025-05-12 17:57:57.304 INFO  [] [main] o.s.b.w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4038 ms
+2025-05-12 17:57:58.891 INFO  [] [main] o.s.o.j.p.SpringPersistenceUnitInfo : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-12 17:57:59.004 INFO  [] [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2025-05-12 17:58:00.612 WARN  [] [main] o.m.jdbc.message.server.ErrorPacket : Error: 1045-28000: Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-12 17:58:01.617 ERROR [] [main] com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Exception during pool initialization.
+java.sql.SQLInvalidAuthorizationSpecException: (conn=3) Access denied for user 'root'@'localhost' (using password: YES)
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:286)
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:370)
+	at org.mariadb.jdbc.client.impl.ConnectionHelper.authenticationHandler(ConnectionHelper.java:269)
+	at org.mariadb.jdbc.client.impl.StandardClient.<init>(StandardClient.java:192)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:70)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:101)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:27)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:424)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:273)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:105)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:66)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:129)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:223)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:191)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:169)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1432)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1503)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1822)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1771)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1173)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:936)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:455)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:323)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1342)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1331)
+	at com.example.currencyconverter.CurrencyConverterApplication.main(CurrencyConverterApplication.java:17)
+2025-05-12 17:58:01.622 WARN  [] [main] o.h.e.j.e.i.JdbcEnvironmentInitiator : HHH000342: Could not obtain connection to query metadata
+java.lang.NullPointerException: Cannot invoke "org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(java.sql.SQLException, String)" because the return value of "org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.sqlExceptionHelper()" is null
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:273)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:105)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:66)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:129)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:223)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:191)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:169)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1432)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1503)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1822)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1771)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1173)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:936)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:455)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:323)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1342)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1331)
+	at com.example.currencyconverter.CurrencyConverterApplication.main(CurrencyConverterApplication.java:17)
+2025-05-12 17:58:01.644 WARN  [] [main] org.hibernate.orm.deprecation : HHH90000025: MariaDBDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-12 17:58:02.508 INFO  [] [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2025-05-12 17:58:03.206 WARN  [] [main] o.m.jdbc.message.server.ErrorPacket : Error: 1045-28000: Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-12 17:58:04.213 ERROR [] [main] com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Exception during pool initialization.
+java.sql.SQLInvalidAuthorizationSpecException: (conn=4) Access denied for user 'root'@'localhost' (using password: YES)
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:286)
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:370)
+	at org.mariadb.jdbc.client.impl.ConnectionHelper.authenticationHandler(ConnectionHelper.java:269)
+	at org.mariadb.jdbc.client.impl.StandardClient.<init>(StandardClient.java:192)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:70)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:101)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:27)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:424)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:46)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:39)
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcConnection(ImprovedExtractionContextImpl.java:63)
+	at org.hibernate.tool.schema.extract.spi.ExtractionContext.getQueryResults(ExtractionContext.java:43)
+	at org.hibernate.tool.schema.extract.internal.SequenceInformationExtractorMariaDBDatabaseImpl.extractMetadata(SequenceInformationExtractorMariaDBDatabaseImpl.java:46)
+	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.initializeSequences(DatabaseInformationImpl.java:66)
+	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.<init>(DatabaseInformationImpl.java:60)
+	at org.hibernate.tool.schema.internal.Helper.buildDatabaseInformation(Helper.java:185)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:98)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:286)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:145)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1429)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:142)
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37)
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:295)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:450)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1507)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1822)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1771)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1173)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:936)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:455)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:323)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1342)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1331)
+	at com.example.currencyconverter.CurrencyConverterApplication.main(CurrencyConverterApplication.java:17)
+2025-05-12 17:58:04.215 WARN  [] [main] o.h.engine.jdbc.spi.SqlExceptionHelper : SQL Error: 1045, SQLState: 28000
+2025-05-12 17:58:04.217 ERROR [] [main] o.h.engine.jdbc.spi.SqlExceptionHelper : (conn=4) Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-12 17:58:04.219 ERROR [] [main] o.s.o.j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [(conn=4) Access denied for user 'root'@'localhost' (using password: YES)] [n/a]
+2025-05-12 17:58:04.221 WARN  [] [main] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [(conn=4) Access denied for user 'root'@'localhost' (using password: YES)] [n/a]
+2025-05-12 17:58:04.222 INFO  [] [main] o.apache.catalina.core.StandardService : Stopping service [Tomcat]
+2025-05-12 17:58:04.235 INFO  [] [main] o.s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-05-12 17:58:04.253 ERROR [] [main] o.springframework.boot.SpringApplication : Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [(conn=4) Access denied for user 'root'@'localhost' (using password: YES)] [n/a]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1775)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1173)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:936)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:455)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:323)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1342)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1331)
+	at com.example.currencyconverter.CurrencyConverterApplication.main(CurrencyConverterApplication.java:17)
+Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [(conn=4) Access denied for user 'root'@'localhost' (using password: YES)] [n/a]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1822)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1771)
+	... 16 common frames omitted
+Caused by: org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [(conn=4) Access denied for user 'root'@'localhost' (using password: YES)] [n/a]
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:51)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:74)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:39)
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcConnection(ImprovedExtractionContextImpl.java:63)
+	at org.hibernate.tool.schema.extract.spi.ExtractionContext.getQueryResults(ExtractionContext.java:43)
+	at org.hibernate.tool.schema.extract.internal.SequenceInformationExtractorMariaDBDatabaseImpl.extractMetadata(SequenceInformationExtractorMariaDBDatabaseImpl.java:46)
+	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.initializeSequences(DatabaseInformationImpl.java:66)
+	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.<init>(DatabaseInformationImpl.java:60)
+	at org.hibernate.tool.schema.internal.Helper.buildDatabaseInformation(Helper.java:185)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:98)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:286)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:145)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1429)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:142)
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37)
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:295)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:450)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1507)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	... 20 common frames omitted
+Caused by: java.sql.SQLInvalidAuthorizationSpecException: (conn=4) Access denied for user 'root'@'localhost' (using password: YES)
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:286)
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:370)
+	at org.mariadb.jdbc.client.impl.ConnectionHelper.authenticationHandler(ConnectionHelper.java:269)
+	at org.mariadb.jdbc.client.impl.StandardClient.<init>(StandardClient.java:192)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:70)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:101)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:27)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:424)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:46)
+	... 40 common frames omitted
+2025-05-12 18:00:17.987 INFO  [] [main] c.e.c.CurrencyConverterApplication : Starting CurrencyConverterApplication using Java 21.0.7 with PID 26276 (C:\Work\GenAI-Projects\currency-converter\backend\currency-converter-backend\target\classes started by ManojKalyanaraman in C:\Work\GenAI-Projects\currency-converter\backend\currency-converter-backend)
+2025-05-12 18:00:17.990 INFO  [] [main] c.e.c.CurrencyConverterApplication : No active profile set, falling back to 1 default profile: "default"
+2025-05-12 18:00:19.585 INFO  [] [main] o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-12 18:00:19.692 INFO  [] [main] o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 89 ms. Found 3 JPA repository interfaces.
+2025-05-12 18:00:21.240 INFO  [] [main] o.s.b.w.embedded.tomcat.TomcatWebServer : Tomcat initialized with port 8080 (http)
+2025-05-12 18:00:21.257 INFO  [] [main] o.apache.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-8080"]
+2025-05-12 18:00:21.265 INFO  [] [main] o.apache.catalina.core.StandardService : Starting service [Tomcat]
+2025-05-12 18:00:21.265 INFO  [] [main] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-05-12 18:00:21.476 INFO  [] [main] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+2025-05-12 18:00:21.476 INFO  [] [main] o.s.b.w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3396 ms
+2025-05-12 18:00:22.872 INFO  [] [main] o.s.o.j.p.SpringPersistenceUnitInfo : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-12 18:00:22.919 INFO  [] [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2025-05-12 18:00:23.208 INFO  [] [main] com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Added connection org.mariadb.jdbc.Connection@12f51a65
+2025-05-12 18:00:23.211 INFO  [] [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2025-05-12 18:00:23.255 WARN  [] [main] org.hibernate.orm.deprecation : HHH90000025: MariaDBDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-12 18:00:24.765 INFO  [] [main] o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-12 18:00:25.315 INFO  [] [main] o.s.d.j.r.query.QueryEnhancerFactory : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-12 18:00:27.403 INFO  [] [main] c.e.c.job.CurrencyRateUpdateJob : Initializing currency rates on startup
+2025-05-12 18:00:27.407 INFO  [] [main] c.e.c.job.CurrencyRateUpdateJob : Starting currency rate update job
+2025-05-12 18:00:27.472 INFO  [] [main] c.e.c.job.CurrencyRateService : Starting currency rates fetch job
+2025-05-12 18:00:27.593 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        c1_0.code,
+        c1_0.description,
+        c1_0.name 
+    from
+        currencies c1_0
+2025-05-12 18:00:27.638 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        c1_0.code,
+        c1_0.description,
+        c1_0.name 
+    from
+        currencies c1_0
+2025-05-12 18:00:27.688 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 18:00:27.707 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 18:00:27.716 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 18:00:27.725 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 18:00:27.734 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 18:00:27.742 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 18:00:27.753 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 18:00:27.760 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 18:00:27.768 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 18:00:27.774 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 18:00:27.781 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 18:00:27.789 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 18:00:27.796 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 18:00:27.802 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 18:00:27.814 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 18:00:27.822 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 18:00:27.825 INFO  [] [main] c.e.c.job.CurrencyRateService : All 16 currency rates are up to date
+2025-05-12 18:00:27.826 INFO  [] [main] c.e.c.job.CurrencyRateService : Skipping API call as rates are fresh
+2025-05-12 18:00:27.834 INFO  [] [main] c.e.c.data.CurrencyConversionMap : Reloading currencies and conversion rates into cache
+2025-05-12 18:00:27.837 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        c1_0.code,
+        c1_0.description,
+        c1_0.name 
+    from
+        currencies c1_0
+2025-05-12 18:00:27.837 INFO  [] [main] c.e.c.data.CurrencyConversionMap : Loaded 16 currencies into cache
+2025-05-12 18:00:27.913 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        cer1_0.id,
+        cer1_0.base_currency,
+        cer1_0.created_at,
+        cer1_0.exchange_rate,
+        cer1_0.job_execution_id,
+        cer1_0.rate_timestamp,
+        cer1_0.status,
+        cer1_0.target_currency 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.status=?
+2025-05-12 18:00:28.011 INFO  [] [main] c.e.c.data.CurrencyConversionMap : Successfully reloaded 16 base currencies with their conversion rates
+2025-05-12 18:00:28.013 INFO  [] [main] c.e.c.job.CurrencyRateUpdateJob : Completed currency rate update job
+2025-05-12 18:00:28.300 WARN  [] [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-12 18:00:29.752 INFO  [] [main] o.apache.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-8080"]
+2025-05-12 18:00:29.844 INFO  [] [main] o.s.b.w.embedded.tomcat.TomcatWebServer : Tomcat started on port 8080 (http) with context path ''
+2025-05-12 18:00:29.889 INFO  [] [main] c.e.c.CurrencyConverterApplication : Started CurrencyConverterApplication in 12.531 seconds (process running for 12.851)
+2025-05-12 18:00:44.437 INFO  [] [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-12 18:00:44.437 INFO  [] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
+2025-05-12 18:00:44.443 INFO  [] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet : Completed initialization in 0 ms
+2025-05-12 18:00:45.007 INFO  [cfc3cf99273e4b2a8d4a16a09fc0b46b] [http-nio-8080-exec-7] o.springdoc.api.AbstractOpenApiResource : Init duration for springdoc-openapi is: 269 ms
+2025-05-12 18:02:21.585 INFO  [6891a56b8e054ca2b0db62f706c7f000] [http-nio-8080-exec-1] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 18:02:28.120 INFO  [88610a5839a64d8791c553174221c2df] [http-nio-8080-exec-5] c.e.c.api.CurrencyController : Converting 100.0 USD to all supported currencies
+2025-05-12 18:02:28.122 INFO  [88610a5839a64d8791c553174221c2df] [http-nio-8080-exec-5] c.e.c.api.service.CurrencyConverterSvc : Successfully converted 100.0 USD to 16 currencies
+2025-05-12 18:02:33.222 INFO  [bbf3d9788da044148c7597a20973bbeb] [http-nio-8080-exec-10] c.e.c.api.CurrencyController : Converting 100.0 USD to EUR
+2025-05-12 18:04:40.443 INFO  [] [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-12 18:04:40.443 INFO  [] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
+2025-05-12 18:04:40.443 INFO  [] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
+2025-05-12 19:06:30.450 INFO  [] [main] c.e.c.CurrencyConverterApplication : Starting CurrencyConverterApplication using Java 21.0.7 with PID 1364 (C:\Work\GenAI-Projects\currency-converter\backend\currency-converter-backend\target\classes started by ManojKalyanaraman in C:\Work\GenAI-Projects\currency-converter\backend\currency-converter-backend)
+2025-05-12 19:06:30.452 INFO  [] [main] c.e.c.CurrencyConverterApplication : No active profile set, falling back to 1 default profile: "default"
+2025-05-12 19:06:31.149 INFO  [] [main] o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-12 19:06:31.221 INFO  [] [main] o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60 ms. Found 3 JPA repository interfaces.
+2025-05-12 19:06:32.494 INFO  [] [main] o.s.b.w.embedded.tomcat.TomcatWebServer : Tomcat initialized with port 8080 (http)
+2025-05-12 19:06:32.507 INFO  [] [main] o.apache.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-8080"]
+2025-05-12 19:06:32.513 INFO  [] [main] o.apache.catalina.core.StandardService : Starting service [Tomcat]
+2025-05-12 19:06:32.515 INFO  [] [main] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-05-12 19:06:32.697 INFO  [] [main] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+2025-05-12 19:06:32.697 INFO  [] [main] o.s.b.w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2195 ms
+2025-05-12 19:06:33.825 INFO  [] [main] o.s.o.j.p.SpringPersistenceUnitInfo : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-12 19:06:33.881 INFO  [] [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2025-05-12 19:06:34.203 INFO  [] [main] com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Added connection org.mariadb.jdbc.Connection@182cc69e
+2025-05-12 19:06:34.204 INFO  [] [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2025-05-12 19:06:34.251 WARN  [] [main] org.hibernate.orm.deprecation : HHH90000025: MariaDBDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-12 19:06:35.704 INFO  [] [main] o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-12 19:06:36.146 INFO  [] [main] o.s.d.j.r.query.QueryEnhancerFactory : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-12 19:06:37.926 INFO  [] [main] c.e.c.job.CurrencyRateUpdateJob : Initializing currency rates on startup
+2025-05-12 19:06:37.927 INFO  [] [main] c.e.c.job.CurrencyRateUpdateJob : Starting currency rate update job
+2025-05-12 19:06:38.032 INFO  [] [main] c.e.c.job.CurrencyRateService : Starting currency rates fetch job
+2025-05-12 19:06:38.182 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        c1_0.code,
+        c1_0.description,
+        c1_0.name 
+    from
+        currencies c1_0
+2025-05-12 19:06:38.231 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        c1_0.code,
+        c1_0.description,
+        c1_0.name 
+    from
+        currencies c1_0
+2025-05-12 19:06:38.284 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:06:38.302 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:06:38.310 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:06:38.316 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:06:38.319 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:06:38.328 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:06:38.338 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:06:38.338 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:06:38.338 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:06:38.353 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:06:38.354 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:06:38.361 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:06:38.368 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:06:38.374 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:06:38.376 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:06:38.387 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:06:38.388 INFO  [] [main] c.e.c.job.CurrencyRateService : All 16 currency rates are up to date
+2025-05-12 19:06:38.388 INFO  [] [main] c.e.c.job.CurrencyRateService : Skipping API call as rates are fresh
+2025-05-12 19:06:38.396 INFO  [] [main] c.e.c.data.CurrencyConversionMap : Reloading currencies and conversion rates into cache
+2025-05-12 19:06:38.401 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        c1_0.code,
+        c1_0.description,
+        c1_0.name 
+    from
+        currencies c1_0
+2025-05-12 19:06:38.402 INFO  [] [main] c.e.c.data.CurrencyConversionMap : Loaded 16 currencies into cache
+2025-05-12 19:06:38.461 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        cer1_0.id,
+        cer1_0.base_currency,
+        cer1_0.created_at,
+        cer1_0.exchange_rate,
+        cer1_0.job_execution_id,
+        cer1_0.rate_timestamp,
+        cer1_0.status,
+        cer1_0.target_currency 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.status=?
+2025-05-12 19:06:38.568 INFO  [] [main] c.e.c.data.CurrencyConversionMap : Successfully reloaded 16 base currencies with their conversion rates
+2025-05-12 19:06:38.570 INFO  [] [main] c.e.c.job.CurrencyRateUpdateJob : Completed currency rate update job
+2025-05-12 19:06:38.877 WARN  [] [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-12 19:06:40.283 INFO  [] [main] o.apache.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-8080"]
+2025-05-12 19:06:40.402 INFO  [] [main] o.s.b.w.embedded.tomcat.TomcatWebServer : Tomcat started on port 8080 (http) with context path ''
+2025-05-12 19:06:40.441 INFO  [] [main] c.e.c.CurrencyConverterApplication : Started CurrencyConverterApplication in 10.465 seconds (process running for 10.85)
+2025-05-12 19:07:23.404 INFO  [] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-12 19:07:23.406 INFO  [] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
+2025-05-12 19:07:23.409 INFO  [] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet : Completed initialization in 3 ms
+2025-05-12 19:07:48.127 INFO  [da237c397b1342538d4eec3102f6cb71] [http-nio-8080-exec-1] o.springdoc.api.AbstractOpenApiResource : Init duration for springdoc-openapi is: 257 ms
+2025-05-12 19:08:57.191 INFO  [51564f4408b2460ba612c1eddead68f9] [http-nio-8080-exec-7] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:08:57.196 INFO  [3f704c91fa02404bb2f42aa8bf1ba891] [http-nio-8080-exec-2] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:08:57.199 INFO  [a84191f9a904474b9298b15fb1f04434] [http-nio-8080-exec-9] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:09:08.727 INFO  [e9919bb9e8624ca2b82cf1b82085ea34] [http-nio-8080-exec-1] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:09:08.732 INFO  [23b09499dc8f4662827b616705b76f3d] [http-nio-8080-exec-3] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:09:08.738 INFO  [978fae00cb644d7f916045551bd6f5a2] [http-nio-8080-exec-4] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:09:25.628 INFO  [db9368d66b2a4c8bbaf3a8b8370f9c7c] [http-nio-8080-exec-6] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:09:39.742 INFO  [2d685d29fa1d43f6a7d8728a08d756ba] [http-nio-8080-exec-5] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:09:58.987 INFO  [cef387267e18484d86916eceecf02822] [http-nio-8080-exec-8] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:09:58.990 INFO  [0f593435ed8047f1b5dcf6c0a45e7af7] [http-nio-8080-exec-7] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:09:58.993 INFO  [29dda10df6bb4b57be71e98ad1268291] [http-nio-8080-exec-2] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:10:06.097 INFO  [052a2843d12f49519bbda728446d442d] [http-nio-8080-exec-9] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:10:06.102 INFO  [721d06debe7e44d3af7110be59d8f1e6] [http-nio-8080-exec-1] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:10:06.107 INFO  [40f84272a4be45fb88d838941df6fd8b] [http-nio-8080-exec-3] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:11:07.895 INFO  [361812e636304d97853263fef40f6ccd] [http-nio-8080-exec-10] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:11:07.906 INFO  [d00b58887f244d898cd3eed80ba44392] [http-nio-8080-exec-8] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:11:26.375 INFO  [36e64966994e4758a093e3561ccf23f2] [http-nio-8080-exec-7] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:11:26.380 INFO  [c6e9a3dbb42f43dcba5851a529dc3fa9] [http-nio-8080-exec-2] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:11:28.184 INFO  [7beaedf3e9d2431cae6ea2821e084e43] [http-nio-8080-exec-9] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:11:28.188 INFO  [f6ae473454a44520910adf980fae1178] [http-nio-8080-exec-1] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:11:28.194 INFO  [cfa1e5282fd84ccba65f3d58791d8ca4] [http-nio-8080-exec-3] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:12:35.481 INFO  [1afb077edbbc477a8ffb8907d0750f95] [http-nio-8080-exec-5] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:13:22.756 INFO  [56ea452fa83041f7a23952a1de034e30] [http-nio-8080-exec-10] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:13:22.765 INFO  [25bbe63c317e44779ae41e10da4dcc77] [http-nio-8080-exec-8] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:13:22.771 INFO  [51afb43b965b497cae5e9b73fc5568d3] [http-nio-8080-exec-7] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:14:54.465 INFO  [] [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-12 19:14:54.468 INFO  [] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
+2025-05-12 19:14:54.471 INFO  [] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
+2025-05-12 19:14:57.823 INFO  [] [main] c.e.c.CurrencyConverterApplication : Starting CurrencyConverterApplication using Java 21.0.7 with PID 30896 (C:\Work\GenAI-Projects\currency-converter\backend\currency-converter-backend\target\classes started by ManojKalyanaraman in C:\Work\GenAI-Projects\currency-converter\backend\currency-converter-backend)
+2025-05-12 19:14:57.826 INFO  [] [main] c.e.c.CurrencyConverterApplication : No active profile set, falling back to 1 default profile: "default"
+2025-05-12 19:14:59.692 INFO  [] [main] o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-12 19:14:59.802 INFO  [] [main] o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 98 ms. Found 3 JPA repository interfaces.
+2025-05-12 19:15:01.167 INFO  [] [main] o.s.b.w.embedded.tomcat.TomcatWebServer : Tomcat initialized with port 8080 (http)
+2025-05-12 19:15:01.183 INFO  [] [main] o.apache.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-8080"]
+2025-05-12 19:15:01.188 INFO  [] [main] o.apache.catalina.core.StandardService : Starting service [Tomcat]
+2025-05-12 19:15:01.192 INFO  [] [main] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-05-12 19:15:01.349 INFO  [] [main] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+2025-05-12 19:15:01.349 INFO  [] [main] o.s.b.w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3412 ms
+2025-05-12 19:15:02.400 INFO  [] [main] o.s.o.j.p.SpringPersistenceUnitInfo : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-12 19:15:02.452 INFO  [] [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2025-05-12 19:15:02.725 INFO  [] [main] com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Added connection org.mariadb.jdbc.Connection@3a2bb026
+2025-05-12 19:15:02.731 INFO  [] [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2025-05-12 19:15:02.765 WARN  [] [main] org.hibernate.orm.deprecation : HHH90000025: MariaDBDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-12 19:15:04.029 INFO  [] [main] o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-12 19:15:04.420 INFO  [] [main] o.s.d.j.r.query.QueryEnhancerFactory : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-12 19:15:06.240 INFO  [] [main] c.e.c.job.CurrencyRateUpdateJob : Initializing currency rates on startup
+2025-05-12 19:15:06.242 INFO  [] [main] c.e.c.job.CurrencyRateUpdateJob : Starting currency rate update job
+2025-05-12 19:15:06.320 INFO  [] [main] c.e.c.job.CurrencyRateService : Starting currency rates fetch job
+2025-05-12 19:15:06.459 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        c1_0.code,
+        c1_0.description,
+        c1_0.name 
+    from
+        currencies c1_0
+2025-05-12 19:15:06.509 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        c1_0.code,
+        c1_0.description,
+        c1_0.name 
+    from
+        currencies c1_0
+2025-05-12 19:15:06.549 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:15:06.558 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:15:06.565 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:15:06.573 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:15:06.576 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:15:06.582 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:15:06.591 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:15:06.594 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:15:06.603 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:15:06.609 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:15:06.615 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:15:06.615 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:15:06.627 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:15:06.631 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:15:06.644 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:15:06.653 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:15:06.657 INFO  [] [main] c.e.c.job.CurrencyRateService : All 16 currency rates are up to date
+2025-05-12 19:15:06.659 INFO  [] [main] c.e.c.job.CurrencyRateService : Skipping API call as rates are fresh
+2025-05-12 19:15:06.665 INFO  [] [main] c.e.c.data.CurrencyConversionMap : Reloading currencies and conversion rates into cache
+2025-05-12 19:15:06.668 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        c1_0.code,
+        c1_0.description,
+        c1_0.name 
+    from
+        currencies c1_0
+2025-05-12 19:15:06.674 INFO  [] [main] c.e.c.data.CurrencyConversionMap : Loaded 16 currencies into cache
+2025-05-12 19:15:06.731 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        cer1_0.id,
+        cer1_0.base_currency,
+        cer1_0.created_at,
+        cer1_0.exchange_rate,
+        cer1_0.job_execution_id,
+        cer1_0.rate_timestamp,
+        cer1_0.status,
+        cer1_0.target_currency 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.status=?
+2025-05-12 19:15:06.852 INFO  [] [main] c.e.c.data.CurrencyConversionMap : Successfully reloaded 16 base currencies with their conversion rates
+2025-05-12 19:15:06.852 INFO  [] [main] c.e.c.job.CurrencyRateUpdateJob : Completed currency rate update job
+2025-05-12 19:15:07.372 WARN  [] [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-12 19:15:08.655 INFO  [] [main] o.apache.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-8080"]
+2025-05-12 19:15:08.766 INFO  [] [main] o.s.b.w.embedded.tomcat.TomcatWebServer : Tomcat started on port 8080 (http) with context path ''
+2025-05-12 19:15:08.815 INFO  [] [main] c.e.c.CurrencyConverterApplication : Started CurrencyConverterApplication in 12.003 seconds (process running for 12.574)
+2025-05-12 19:15:12.515 INFO  [] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-12 19:15:12.524 INFO  [] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
+2025-05-12 19:15:12.526 INFO  [] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet : Completed initialization in 1 ms
+2025-05-12 19:15:12.575 INFO  [aaaea6f949a248be845087442bf100d6] [http-nio-8080-exec-1] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:15:12.641 INFO  [d9404b06d5cb4f65b46a6dfc87aedfa4] [http-nio-8080-exec-2] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:15:33.176 INFO  [6a2600a042774f04977de6d189aaed65] [http-nio-8080-exec-3] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:15:33.181 INFO  [9492ded938994c09ad25d8d10fbb736f] [http-nio-8080-exec-4] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:16:00.042 INFO  [4c8b6e9b49b84325a4dfc38cac136700] [http-nio-8080-exec-5] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:16:00.047 INFO  [e7c71dcd882149d1805df5d3e7b0e449] [http-nio-8080-exec-6] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:16:15.452 INFO  [06418fb4aa164b758931f58beb8ef45b] [http-nio-8080-exec-7] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:16:15.460 INFO  [5c337fe78bdd4db78ff80f87cf2e04d5] [http-nio-8080-exec-8] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:18:03.210 INFO  [d3e7a7b0aad8417b819489fb4029a51c] [http-nio-8080-exec-1] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:18:03.218 INFO  [d25b1b69ca524cf6972464e35962f2f9] [http-nio-8080-exec-2] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:18:10.437 INFO  [0d474629879f481c9b3746363bd1e1b8] [http-nio-8080-exec-4] c.e.c.api.CurrencyController : Converting 34.0 SGD to JPY
+2025-05-12 19:18:19.416 INFO  [92d2c926dd354920be3443a372e34421] [http-nio-8080-exec-5] c.e.c.api.CurrencyController : Converting 34.0 SGD to JPY
+2025-05-12 19:18:20.651 INFO  [2c2dd8ac427447bfb022fa703a3f73cd] [http-nio-8080-exec-6] c.e.c.api.CurrencyController : Converting 34.0 SGD to JPY
+2025-05-12 19:19:54.688 INFO  [12bb06e618b849bbadce918de82d8e75] [http-nio-8080-exec-9] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:19:54.698 INFO  [f14d1d0934bd460c81bb0fcfd0a6b59a] [http-nio-8080-exec-10] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:20:00.192 INFO  [7a5053f8299848858c14a3709c2e9418] [http-nio-8080-exec-1] c.e.c.api.CurrencyController : Converting 44.0 GBP to SEK
+2025-05-12 19:22:08.235 INFO  [68ed4a87d12b4662932c3d1be141d9ca] [http-nio-8080-exec-4] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:22:08.247 INFO  [091fa99046e141cab2f3803cbf7fc3a1] [http-nio-8080-exec-5] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:22:17.711 INFO  [73ba563650494641ac868463f7ccc417] [http-nio-8080-exec-6] c.e.c.api.CurrencyController : Converting 34.0 AUD to EUR
+2025-05-12 19:24:10.711 INFO  [845b77a465334f16a348dac3f037c5b2] [http-nio-8080-exec-8] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:24:10.718 INFO  [89fe3e68f6d74244b0ec43cef21cc3e0] [http-nio-8080-exec-9] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:24:29.304 INFO  [39768f0a335946efaea1ae3d1a77ad05] [http-nio-8080-exec-10] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:24:29.310 INFO  [ba7339596b484828bb3b762266afee58] [http-nio-8080-exec-1] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:24:40.807 INFO  [80186785558d462f9bbbf30d78c0e771] [http-nio-8080-exec-2] c.e.c.api.CurrencyController : Converting 345.0 USD to EUR
+2025-05-12 19:24:45.967 INFO  [7d03e62d97cb4df99d1f32025f984d93] [http-nio-8080-exec-3] c.e.c.api.CurrencyController : Converting 200.0 USD to EUR
+2025-05-12 19:32:11.403 INFO  [eef753dbbce84dea97de3bb9e79e3c21] [http-nio-8080-exec-6] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:32:11.439 INFO  [d7678b779ec94b67a846f73c45ca1061] [http-nio-8080-exec-7] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:32:13.796 INFO  [cc6c31b405274c35a5fef73c4ca80971] [http-nio-8080-exec-8] c.e.c.api.CurrencyController : Converting 34.0 USD to EUR
+2025-05-12 19:32:24.864 INFO  [91fb262871904e59b2ae83a751d01bcc] [http-nio-8080-exec-9] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:32:24.868 INFO  [cf3335f62ef142ac8da0f3164b383aee] [http-nio-8080-exec-10] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:32:28.277 INFO  [8d517939df0647e7967d0af8f68260bc] [http-nio-8080-exec-1] c.e.c.api.CurrencyController : Converting 34.0 USD to EUR
+2025-05-12 19:35:12.531 INFO  [be47a558381d45d79cd0ed7106891316] [http-nio-8080-exec-5] c.e.c.api.CurrencyController : Converting 100.0 USD to EUR
+2025-05-12 19:35:29.793 INFO  [] [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-12 19:35:29.796 INFO  [] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
+2025-05-12 19:35:29.810 INFO  [] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
+2025-05-12 19:35:32.847 INFO  [] [main] c.e.c.CurrencyConverterApplication : Starting CurrencyConverterApplication using Java 21.0.7 with PID 31912 (C:\Work\GenAI-Projects\currency-converter\backend\currency-converter-backend\target\classes started by ManojKalyanaraman in C:\Work\GenAI-Projects\currency-converter\backend\currency-converter-backend)
+2025-05-12 19:35:32.850 INFO  [] [main] c.e.c.CurrencyConverterApplication : No active profile set, falling back to 1 default profile: "default"
+2025-05-12 19:35:34.671 INFO  [] [main] o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-12 19:35:34.846 INFO  [] [main] o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 157 ms. Found 3 JPA repository interfaces.
+2025-05-12 19:35:36.227 INFO  [] [main] o.s.b.w.embedded.tomcat.TomcatWebServer : Tomcat initialized with port 8080 (http)
+2025-05-12 19:35:36.241 INFO  [] [main] o.apache.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-8080"]
+2025-05-12 19:35:36.246 INFO  [] [main] o.apache.catalina.core.StandardService : Starting service [Tomcat]
+2025-05-12 19:35:36.247 INFO  [] [main] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-05-12 19:35:36.394 INFO  [] [main] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+2025-05-12 19:35:36.395 INFO  [] [main] o.s.b.w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3459 ms
+2025-05-12 19:35:37.397 INFO  [] [main] o.s.o.j.p.SpringPersistenceUnitInfo : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-12 19:35:37.454 INFO  [] [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2025-05-12 19:35:37.710 INFO  [] [main] com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Added connection org.mariadb.jdbc.Connection@33215ffb
+2025-05-12 19:35:37.712 INFO  [] [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2025-05-12 19:35:37.811 WARN  [] [main] org.hibernate.orm.deprecation : HHH90000025: MariaDBDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-12 19:35:39.000 INFO  [] [main] o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-12 19:35:39.458 INFO  [] [main] o.s.d.j.r.query.QueryEnhancerFactory : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-12 19:35:41.081 INFO  [] [main] c.e.c.job.CurrencyRateUpdateJob : Initializing currency rates on startup
+2025-05-12 19:35:41.081 INFO  [] [main] c.e.c.job.CurrencyRateUpdateJob : Starting currency rate update job
+2025-05-12 19:35:41.188 INFO  [] [main] c.e.c.job.CurrencyRateService : Starting currency rates fetch job
+2025-05-12 19:35:41.339 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        c1_0.code,
+        c1_0.description,
+        c1_0.name 
+    from
+        currencies c1_0
+2025-05-12 19:35:41.378 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        c1_0.code,
+        c1_0.description,
+        c1_0.name 
+    from
+        currencies c1_0
+2025-05-12 19:35:41.426 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:35:41.435 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:35:41.444 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:35:41.449 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:35:41.455 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:35:41.460 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:35:41.468 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:35:41.475 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:35:41.482 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:35:41.487 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:35:41.494 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:35:41.499 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:35:41.504 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:35:41.509 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:35:41.515 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:35:41.521 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:35:41.524 INFO  [] [main] c.e.c.job.CurrencyRateService : All 16 currency rates are up to date
+2025-05-12 19:35:41.525 INFO  [] [main] c.e.c.job.CurrencyRateService : Skipping API call as rates are fresh
+2025-05-12 19:35:41.531 INFO  [] [main] c.e.c.data.CurrencyConversionMap : Reloading currencies and conversion rates into cache
+2025-05-12 19:35:41.536 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        c1_0.code,
+        c1_0.description,
+        c1_0.name 
+    from
+        currencies c1_0
+2025-05-12 19:35:41.541 INFO  [] [main] c.e.c.data.CurrencyConversionMap : Loaded 16 currencies into cache
+2025-05-12 19:35:41.607 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        cer1_0.id,
+        cer1_0.base_currency,
+        cer1_0.created_at,
+        cer1_0.exchange_rate,
+        cer1_0.job_execution_id,
+        cer1_0.rate_timestamp,
+        cer1_0.status,
+        cer1_0.target_currency 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.status=?
+2025-05-12 19:35:41.723 INFO  [] [main] c.e.c.data.CurrencyConversionMap : Successfully reloaded 16 base currencies with their conversion rates
+2025-05-12 19:35:41.723 INFO  [] [main] c.e.c.job.CurrencyRateUpdateJob : Completed currency rate update job
+2025-05-12 19:35:42.219 WARN  [] [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-12 19:35:43.769 INFO  [] [main] o.apache.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-8080"]
+2025-05-12 19:35:43.914 INFO  [] [main] o.s.b.w.embedded.tomcat.TomcatWebServer : Tomcat started on port 8080 (http) with context path ''
+2025-05-12 19:35:43.972 INFO  [] [main] c.e.c.CurrencyConverterApplication : Started CurrencyConverterApplication in 11.72 seconds (process running for 12.108)
+2025-05-12 19:35:48.414 INFO  [] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-12 19:35:48.414 INFO  [] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
+2025-05-12 19:35:48.415 INFO  [] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet : Completed initialization in 1 ms
+2025-05-12 19:35:48.488 INFO  [b5f0728e2ad04c269229eb28f0bb6024] [http-nio-8080-exec-2] c.e.c.api.CurrencyController : Converting 100.0 USD to EUR
+2025-05-12 19:37:04.647 INFO  [d52dd48097c440d18b4c1d382bf5e1ac] [http-nio-8080-exec-5] c.e.c.api.CurrencyController : Converting 100.0 USD to EUR
+2025-05-12 19:37:06.793 INFO  [d1ad7ac9034c4fe7a57c65649ae7f615] [http-nio-8080-exec-6] c.e.c.api.CurrencyController : Converting 100.0 USD to EUR
+2025-05-12 19:38:48.569 INFO  [56ea3097f9f0466eb82bda17aa5bc7ac] [http-nio-8080-exec-10] c.e.c.api.CurrencyController : Converting 100.0 USD to EUR
+2025-05-12 19:38:50.199 INFO  [02bcc3063e984de0bf3f2697091c7162] [http-nio-8080-exec-8] c.e.c.api.CurrencyController : Converting 100.0 USD to EUR
+2025-05-12 19:38:54.299 INFO  [] [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-12 19:38:54.301 INFO  [] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
+2025-05-12 19:38:54.318 INFO  [] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
+2025-05-12 19:38:56.755 INFO  [] [main] c.e.c.CurrencyConverterApplication : Starting CurrencyConverterApplication using Java 21.0.7 with PID 3112 (C:\Work\GenAI-Projects\currency-converter\backend\currency-converter-backend\target\classes started by ManojKalyanaraman in C:\Work\GenAI-Projects\currency-converter\backend\currency-converter-backend)
+2025-05-12 19:38:56.758 INFO  [] [main] c.e.c.CurrencyConverterApplication : No active profile set, falling back to 1 default profile: "default"
+2025-05-12 19:38:58.684 INFO  [] [main] o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-12 19:38:58.828 INFO  [] [main] o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 130 ms. Found 3 JPA repository interfaces.
+2025-05-12 19:39:00.734 INFO  [] [main] o.s.b.w.embedded.tomcat.TomcatWebServer : Tomcat initialized with port 8080 (http)
+2025-05-12 19:39:00.754 INFO  [] [main] o.apache.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-8080"]
+2025-05-12 19:39:00.764 INFO  [] [main] o.apache.catalina.core.StandardService : Starting service [Tomcat]
+2025-05-12 19:39:00.766 INFO  [] [main] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-05-12 19:39:01.014 INFO  [] [main] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+2025-05-12 19:39:01.016 INFO  [] [main] o.s.b.w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4168 ms
+2025-05-12 19:39:02.252 INFO  [] [main] o.s.o.j.p.SpringPersistenceUnitInfo : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-12 19:39:02.300 INFO  [] [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2025-05-12 19:39:02.619 INFO  [] [main] com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Added connection org.mariadb.jdbc.Connection@4b343b6d
+2025-05-12 19:39:02.621 INFO  [] [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2025-05-12 19:39:02.665 WARN  [] [main] org.hibernate.orm.deprecation : HHH90000025: MariaDBDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-12 19:39:03.874 INFO  [] [main] o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-12 19:39:04.370 INFO  [] [main] o.s.d.j.r.query.QueryEnhancerFactory : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-12 19:39:06.365 INFO  [] [main] c.e.c.job.CurrencyRateUpdateJob : Initializing currency rates on startup
+2025-05-12 19:39:06.367 INFO  [] [main] c.e.c.job.CurrencyRateUpdateJob : Starting currency rate update job
+2025-05-12 19:39:06.427 INFO  [] [main] c.e.c.job.CurrencyRateService : Starting currency rates fetch job
+2025-05-12 19:39:06.571 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        c1_0.code,
+        c1_0.description,
+        c1_0.name 
+    from
+        currencies c1_0
+2025-05-12 19:39:06.606 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        c1_0.code,
+        c1_0.description,
+        c1_0.name 
+    from
+        currencies c1_0
+2025-05-12 19:39:06.649 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:39:06.658 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:39:06.664 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:39:06.670 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:39:06.674 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:39:06.678 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:39:06.685 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:39:06.691 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:39:06.696 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:39:06.700 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:39:06.706 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:39:06.710 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:39:06.714 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:39:06.719 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:39:06.732 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:39:06.738 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        count(cer1_0.id)>0 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.base_currency=? 
+        and cer1_0.status='LATEST' 
+        and cer1_0.rate_timestamp>=?
+2025-05-12 19:39:06.740 INFO  [] [main] c.e.c.job.CurrencyRateService : All 16 currency rates are up to date
+2025-05-12 19:39:06.742 INFO  [] [main] c.e.c.job.CurrencyRateService : Skipping API call as rates are fresh
+2025-05-12 19:39:06.747 INFO  [] [main] c.e.c.data.CurrencyConversionMap : Reloading currencies and conversion rates into cache
+2025-05-12 19:39:06.751 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        c1_0.code,
+        c1_0.description,
+        c1_0.name 
+    from
+        currencies c1_0
+2025-05-12 19:39:06.755 INFO  [] [main] c.e.c.data.CurrencyConversionMap : Loaded 16 currencies into cache
+2025-05-12 19:39:06.805 DEBUG [] [main] org.hibernate.SQL : 
+    select
+        cer1_0.id,
+        cer1_0.base_currency,
+        cer1_0.created_at,
+        cer1_0.exchange_rate,
+        cer1_0.job_execution_id,
+        cer1_0.rate_timestamp,
+        cer1_0.status,
+        cer1_0.target_currency 
+    from
+        currency_exchange_rates cer1_0 
+    where
+        cer1_0.status=?
+2025-05-12 19:39:06.907 INFO  [] [main] c.e.c.data.CurrencyConversionMap : Successfully reloaded 16 base currencies with their conversion rates
+2025-05-12 19:39:06.907 INFO  [] [main] c.e.c.job.CurrencyRateUpdateJob : Completed currency rate update job
+2025-05-12 19:39:07.156 WARN  [] [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-12 19:39:08.077 INFO  [] [main] o.apache.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-8080"]
+2025-05-12 19:39:08.182 INFO  [] [main] o.s.b.w.embedded.tomcat.TomcatWebServer : Tomcat started on port 8080 (http) with context path ''
+2025-05-12 19:39:08.219 INFO  [] [main] c.e.c.CurrencyConverterApplication : Started CurrencyConverterApplication in 12.421 seconds (process running for 12.905)
+2025-05-12 19:39:09.963 INFO  [] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-12 19:39:09.964 INFO  [] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
+2025-05-12 19:39:09.965 INFO  [] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet : Completed initialization in 1 ms
+2025-05-12 19:39:10.062 INFO  [52377e1855674014b613e0a886fe32d2] [http-nio-8080-exec-2] c.e.c.api.CurrencyController : Converting 100.0 USD to EUR
+2025-05-12 19:39:18.395 INFO  [4bd15c5f507b4a868eb5a00f024ac0f8] [http-nio-8080-exec-3] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:39:18.414 INFO  [af428ef4dd304462ad33ad690711fd40] [http-nio-8080-exec-4] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:39:21.296 INFO  [aa187afe1eed410d825ef7d531b8268a] [http-nio-8080-exec-5] c.e.c.api.CurrencyController : Converting 34.0 USD to EUR
+2025-05-12 19:40:57.759 INFO  [5165409afb2e4e78818ccc8397febd1d] [http-nio-8080-exec-10] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:40:57.768 INFO  [2022f7c8123d425fb032375fe2a69991] [http-nio-8080-exec-9] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:41:18.980 INFO  [c8579294108e4cebabdef192f8017a89] [http-nio-8080-exec-1] c.e.c.api.CurrencyController : Converting 3.0 USD to KRW
+2025-05-12 19:42:27.540 INFO  [e8092f94422c4de59a68487337a98d4b] [http-nio-8080-exec-4] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:42:27.549 INFO  [59c35fc70ce743308b3b4266e63036c0] [http-nio-8080-exec-5] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:42:31.871 INFO  [970a94a100d94fae9bf81b19c9085a01] [http-nio-8080-exec-6] c.e.c.api.CurrencyController : Converting 34.0 JPY to EUR
+2025-05-12 19:46:22.552 INFO  [000f21e3a8af46d398aa55ac5b46629b] [http-nio-8080-exec-10] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:46:22.604 INFO  [3bdecdcbf80a4c60a4c59d78a166e37a] [http-nio-8080-exec-9] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:46:41.727 INFO  [2895d862513c45cc99d805ab8f62bd16] [http-nio-8080-exec-3] c.e.c.api.CurrencyController : Converting 34.0 MXN to SGD
+2025-05-12 19:47:02.821 INFO  [8ae3aaf43f294470acafeb7ca606cad1] [http-nio-8080-exec-4] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:47:02.836 INFO  [6b0eb2a0a43540c5a6e41edfe53b3ca7] [http-nio-8080-exec-5] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:47:35.220 INFO  [4e459b02a7e74bacacdde3bd86c27574] [http-nio-8080-exec-7] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:47:35.227 INFO  [a1e9647b75504961b083e0cbbc32e19e] [http-nio-8080-exec-10] c.e.c.api.CurrencyController : Found 16 supported currencies
+2025-05-12 19:47:56.006 INFO  [cdf62bd0fa2943b1aea8025d8e584eed] [http-nio-8080-exec-2] c.e.c.api.CurrencyController : Converting 34.0 KRW to SEK
+2025-05-12 19:48:22.880 INFO  [26f18e31d234459ca1b49e01528d3809] [http-nio-8080-exec-5] c.e.c.api.CurrencyController : Converting 345.0 AUD to CNY
+2025-05-12 19:49:42.610 INFO  [] [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-12 19:49:42.611 INFO  [] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
+2025-05-12 19:49:42.615 INFO  [] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
